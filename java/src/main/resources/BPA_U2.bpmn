@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="b135d21" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.4.0" camunda:diagramRelationId="f60899c0-80dd-4424-b09e-c3b50145e299">
+  <bpmn:collaboration id="Collaboration_0af2aso" name="flixflix with java">
+    <bpmn:participant id="Participant_0cmuujq" name="Streaming Service" processRef="Process_quiq5yh" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_quiq5yh" name="flixflix" isExecutable="true">
+    <bpmn:extensionElements>
+      <zeebe:userTaskForm id="UserTaskForm_3lp1ji5">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.3.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "42b7727"
+  },
+  "schemaVersion": 13,
+  "id": "Form_1u98m2k",
+  "components": [
+    {
+      "text": "# Choose your FlixFlix payment plan!",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0gddgje",
+        "columns": null
+      },
+      "id": "Field_16h9r2e"
+    },
+    {
+      "label": "Image view",
+      "type": "image",
+      "layout": {
+        "row": "Row_14joife",
+        "columns": null
+      },
+      "id": "Field_0mxp08b",
+      "source": "https://i.imgur.com/TEPlaXI.png"
+    },
+    {
+      "values": [
+        {
+          "label": "Geringverdiener Plan - 0,99€/Month",
+          "value": "0"
+        },
+        {
+          "label": "Student Plan - 12,99€/Month",
+          "value": "1"
+        },
+        {
+          "label": "Working Man Plan - 399,99€/Month",
+          "value": "2"
+        },
+        {
+          "label": "Yacht Owner Plan - 1399,99€/Month",
+          "value": "3"
+        }
+      ],
+      "label": "",
+      "type": "select",
+      "layout": {
+        "row": "Row_0f0yi4e",
+        "columns": null
+      },
+      "id": "Field_0lzz16j",
+      "key": "payment_plan",
+      "defaultValue": "1",
+      "description": "The more you pay, the more you enjoy!"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_0ag3kg3">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.3.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "42b7727"
+  },
+  "schemaVersion": 13,
+  "id": "Form_1fa9rzu",
+  "components": [
+    {
+      "text": "# FlixFlix",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_1gd7mig",
+        "columns": null
+      },
+      "id": "Field_0qypnpk"
+    },
+    {
+      "label": "Image view",
+      "type": "image",
+      "layout": {
+        "row": "Row_12t646a",
+        "columns": null
+      },
+      "id": "Field_08ey36r",
+      "source": "https://i.imgur.com/TEPlaXI.png"
+    },
+    {
+      "text": "Please verify your email address!\nA rich world full of movies and series is just behind this button (and a paywall).",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_0pn8qpb",
+        "columns": null
+      },
+      "id": "Field_12a95lp"
+    },
+    {
+      "action": "submit",
+      "label": "Verify!",
+      "type": "button",
+      "layout": {
+        "row": "Row_0vvgv68",
+        "columns": 4
+      },
+      "id": "Field_0bfmglo"
+    },
+    {
+      "label": "Yes, I agree to receive all the newsletters",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_0inuofa",
+        "columns": null
+      },
+      "id": "Field_08po1qg",
+      "key": "checkbox_r078ep",
+      "defaultValue": true,
+      "readonly": true
+    },
+    {
+      "label": "No, I disagree with not receiving any newsletters",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_082wtu3",
+        "columns": null
+      },
+      "id": "Field_0erh5wp",
+      "key": "checkbox_6lixhe",
+      "defaultValue": true,
+      "readonly": true
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_12q7hsd">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.3.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "42b7727"
+  },
+  "schemaVersion": 13,
+  "id": "provide-payment-details-1sskzhr",
+  "components": [
+    {
+      "text": "# Now to the fun part: Payment",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_10dckhn",
+        "columns": null
+      },
+      "id": "Field_16r3lqe"
+    },
+    {
+      "label": "Image view",
+      "type": "image",
+      "layout": {
+        "row": "Row_1ezf8r6",
+        "columns": null
+      },
+      "id": "Field_17a84kj",
+      "source": "https://i.imgur.com/TEPlaXI.png"
+    },
+    {
+      "label": "Card number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0qgfule",
+        "columns": null
+      },
+      "id": "Field_0x3hpfi",
+      "key": "payment_card"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_1t6d0bf">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.3.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "42b7727"
+  },
+  "schemaVersion": 13,
+  "id": "received-signup-request-0zbqy1u",
+  "components": [
+    {
+      "text": "# Sign up now! Wow!",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_10ws13k",
+        "columns": null
+      },
+      "id": "Field_02jku89"
+    },
+    {
+      "label": "Image view",
+      "type": "image",
+      "layout": {
+        "row": "Row_06agrft",
+        "columns": null
+      },
+      "id": "Field_0yt37mv",
+      "source": "https://i.imgur.com/TEPlaXI.png"
+    },
+    {
+      "label": "Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_14pczhb",
+        "columns": null
+      },
+      "id": "Field_1w0ahgj",
+      "key": "req_name"
+    },
+    {
+      "label": "Email Address",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1q0suvi",
+        "columns": null
+      },
+      "id": "Field_1q62vtk",
+      "key": "out_req_email",
+      "description": "Please provide your email address, so we can spam you with newsletters"
+    },
+    {
+      "action": "submit",
+      "label": "Signup now",
+      "type": "button",
+      "layout": {
+        "row": "Row_1dnhftm",
+        "columns": null
+      },
+      "id": "Field_1r8kmhx"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+      <zeebe:userTaskForm id="UserTaskForm_3nbqcrr">{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.3.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "42b7727"
+  },
+  "schemaVersion": 13,
+  "id": "received-signup-request-0zbqy1u",
+  "components": [
+    {
+      "text": "# Sign up now! Wow!",
+      "label": "Text view",
+      "type": "text",
+      "layout": {
+        "row": "Row_10ws13k",
+        "columns": null
+      },
+      "id": "Field_02jku89"
+    },
+    {
+      "label": "Image view",
+      "type": "image",
+      "layout": {
+        "row": "Row_06agrft",
+        "columns": null
+      },
+      "id": "Field_0yt37mv",
+      "source": "https://i.imgur.com/TEPlaXI.png"
+    },
+    {
+      "label": "Name",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_14pczhb",
+        "columns": null
+      },
+      "id": "Field_1w0ahgj",
+      "key": "req_name"
+    },
+    {
+      "label": "Email Address",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1q0suvi",
+        "columns": null
+      },
+      "id": "Field_1q62vtk",
+      "key": "out_req_email",
+      "description": "Please provide your email address, so we can spam you with newsletters"
+    },
+    {
+      "action": "submit",
+      "label": "Signup now",
+      "type": "button",
+      "layout": {
+        "row": "Row_1dnhftm",
+        "columns": null
+      },
+      "id": "Field_1r8kmhx"
+    }
+  ],
+  "type": "default"
+}</zeebe:userTaskForm>
+    </bpmn:extensionElements>
+    <bpmn:startEvent id="event_start_signup" name="Received signup request">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_3nbqcrr" />
+        <zeebe:ioMapping>
+          <zeebe:output source="=out_req_email" target="req_email" />
+          <zeebe:output source="=req_name" target="req_name" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:outgoing>Flow_13a2829</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:exclusiveGateway id="xor_check_email_validity">
+      <bpmn:incoming>Flow_13a2829</bpmn:incoming>
+      <bpmn:incoming>Flow_1vnwwm3</bpmn:incoming>
+      <bpmn:outgoing>Flow_1367puc</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:userTask id="Activity_0goc7gv" name="Enter new email">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_1t6d0bf" />
+        <zeebe:ioMapping>
+          <zeebe:output source="=out_req_email" target="req_email" />
+          <zeebe:output source="=req_name" target="req_name" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0bn0p9y</bpmn:incoming>
+      <bpmn:outgoing>Flow_1vnwwm3</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:dataStoreReference id="DataStoreReference_0wpd9e1" name="User DB">
+      <bpmn:extensionElements>
+        <zeebe:properties>
+          <zeebe:property name="camundaModeler:exampleOutputJson" value="{&#10;  &#34;email_db&#34;: [&#10;    &#34;used@mail.com&#34;&#10;]&#10;}" />
+        </zeebe:properties>
+      </bpmn:extensionElements>
+    </bpmn:dataStoreReference>
+    <bpmn:sequenceFlow id="Flow_13a2829" sourceRef="event_start_signup" targetRef="xor_check_email_validity" />
+    <bpmn:sequenceFlow id="Flow_1vnwwm3" sourceRef="Activity_0goc7gv" targetRef="xor_check_email_validity" />
+    <bpmn:sequenceFlow id="Flow_1eshjpt" name="yes" sourceRef="xor_email_valid" targetRef="Activity_1injomm">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=not(email_valid)</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0bn0p9y" name="no" sourceRef="xor_email_valid" targetRef="Activity_0goc7gv">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=email_valid</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_13s4htg" sourceRef="Activity_1injomm" targetRef="Gateway_1b0t0j2" />
+    <bpmn:sequenceFlow id="Flow_1tz1g40" sourceRef="Activity_1xvseil" targetRef="event_end_signup" />
+    <bpmn:sequenceFlow id="Flow_1u7miq1" name="no" sourceRef="Gateway_1618xqj" targetRef="Gateway_0595vnq">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=not(payment_verified)</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1ihwbfr" sourceRef="Gateway_0595vnq" targetRef="Activity_0k0yopk" />
+    <bpmn:sequenceFlow id="Flow_1tf525v" name="yes" sourceRef="Gateway_1618xqj" targetRef="Activity_1xvseil">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">=payment_verified</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1mcl6q7" sourceRef="Gateway_1b0t0j2" targetRef="usr_task_select_payment_plan" />
+    <bpmn:sequenceFlow id="Flow_0x2msf9" sourceRef="usr_task_select_payment_plan" targetRef="Gateway_08v6b5o" />
+    <bpmn:sequenceFlow id="Flow_0pgme9z" sourceRef="Gateway_08v6b5o" targetRef="Gateway_0595vnq" />
+    <bpmn:sequenceFlow id="Flow_00fuych" sourceRef="Gateway_1b0t0j2" targetRef="usrtask_verify_email" />
+    <bpmn:sequenceFlow id="Flow_0ox0yk2" sourceRef="usrtask_verify_email" targetRef="Gateway_08v6b5o" />
+    <bpmn:exclusiveGateway id="xor_email_valid" name="is email valid?">
+      <bpmn:incoming>Flow_0hloyik</bpmn:incoming>
+      <bpmn:outgoing>Flow_0bn0p9y</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1eshjpt</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:serviceTask id="Activity_1injomm" name="Send notification email" zeebe:modelerTemplate="io.camunda.connectors.SendGrid.v2" zeebe:modelerTemplateVersion="2" zeebe:modelerTemplateIcon="data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%205.40847H5.43837V10.5611H0.285706V5.40847Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V15.6844H5.43837V10.5611Z%22%20fill%3D%22%2399E1F4%22%2F%3E%0A%3Cpath%20d%3D%22M0.285706%2015.6846L5.43837%2015.6844V15.7143H0.285706V15.6846ZM0.285706%2010.5619H5.43837V15.6844L0.285706%2015.6846V10.5619Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%200.285706H10.5611V5.40847H5.43837V0.285706ZM10.5616%205.43837H15.7143V10.5611H10.5616V5.43837Z%22%20fill%3D%22%2300B3E3%22%2F%3E%0A%3Cpath%20d%3D%22M5.43837%2010.5611L10.5611%2010.5616V5.40847H5.43837V10.5611Z%22%20fill%3D%22%23009DD9%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%200.285706H15.7143V5.40847H10.5611V0.285706Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3Cpath%20d%3D%22M10.5611%205.40847H15.7143V5.43837H10.5616L10.5611%205.40847Z%22%20fill%3D%22%231A82E2%22%2F%3E%0A%3C%2Fsvg%3E">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="io.camunda:sendgrid:1" />
+        <zeebe:ioMapping>
+          <zeebe:input source="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" target="apiKey" />
+          <zeebe:input source="mirkusbirkus@gmail.com" target="from.name" />
+          <zeebe:input source="mirkusbirkus@gmail.com" target="from.email" />
+          <zeebe:input source="=req_email" target="to.name" />
+          <zeebe:input source="=req_email" target="to.email" />
+          <zeebe:input source="byTemplate" target="unMappedFieldNotUseInModel.mailType" />
+          <zeebe:input source="d-c874ea2289d342ad990314cec7653f1b" target="template.id" />
+          <zeebe:input source="={&#10;  &#34;name&#34;: req_name&#10;}" target="template.data" />
+        </zeebe:ioMapping>
+        <zeebe:taskHeaders />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1eshjpt</bpmn:incoming>
+      <bpmn:outgoing>Flow_13s4htg</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:parallelGateway id="Gateway_1b0t0j2">
+      <bpmn:incoming>Flow_13s4htg</bpmn:incoming>
+      <bpmn:outgoing>Flow_1mcl6q7</bpmn:outgoing>
+      <bpmn:outgoing>Flow_00fuych</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:exclusiveGateway id="Gateway_0595vnq">
+      <bpmn:incoming>Flow_1u7miq1</bpmn:incoming>
+      <bpmn:incoming>Flow_0pgme9z</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ihwbfr</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Activity_1xvseil" name="Create User Account">
+      <bpmn:incoming>Flow_1tf525v</bpmn:incoming>
+      <bpmn:outgoing>Flow_1tz1g40</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gateway_1618xqj" name="Payment verified?">
+      <bpmn:incoming>Flow_1kty4pg</bpmn:incoming>
+      <bpmn:outgoing>Flow_1tf525v</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1u7miq1</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:endEvent id="event_end_signup" name="Signup successful">
+      <bpmn:incoming>Flow_1tz1g40</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="usr_task_select_payment_plan" name="Select payment plan">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_3lp1ji5" />
+        <zeebe:ioMapping>
+          <zeebe:output source="=payment_plan" target="payment_plan" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1mcl6q7</bpmn:incoming>
+      <bpmn:outgoing>Flow_0x2msf9</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="usrtask_verify_email" name="Verify Email">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_0ag3kg3" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_00fuych</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ox0yk2</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:parallelGateway id="Gateway_08v6b5o">
+      <bpmn:incoming>Flow_0x2msf9</bpmn:incoming>
+      <bpmn:incoming>Flow_0ox0yk2</bpmn:incoming>
+      <bpmn:outgoing>Flow_0pgme9z</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:serviceTask id="Activity_0igullt" name="Check email for validity">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="check_email" />
+        <zeebe:ioMapping>
+          <zeebe:input source="=in_req_email" target="in_req_email" />
+          <zeebe:output source="=email_valid" target="email_valid" />
+        </zeebe:ioMapping>
+        <zeebe:properties>
+          <zeebe:property name="camundaModeler:exampleOutputJson" value="{&#10;  &#34;email_db&#34;: [&#10;    &#34;used@mail.com&#34;,&#10;    &#34;john.doe@example.com&#34;,&#10;    &#34;jane.smith@example.com&#34;,&#10;    &#34;alexander123@mail.com&#34;,&#10;    &#34;emily_22@example.com&#34;,&#10;    &#34;michael.smith@mail.com&#34;,&#10;    &#34;sara.jones@example.com&#34;,&#10;    &#34;robert_89@mail.com&#34;,&#10;    &#34;olivia.taylor@example.com&#34;,&#10;    &#34;william2000@mail.com&#34;,&#10;    &#34;ava.brown@example.com&#34;,&#10;    &#34;david.miller@mail.com&#34;,&#10;    &#34;isabella98@example.com&#34;,&#10;    &#34;jamesjohnson@mail.com&#34;,&#10;    &#34;sophia.king@example.com&#34;,&#10;    &#34;matthew_77@mail.com&#34;,&#10;    &#34;emma.wilson@example.com&#34;,&#10;    &#34;daniel.green@mail.com&#34;,&#10;    &#34;mia.johnson@example.com&#34;,&#10;    &#34;jacob_1234@mail.com&#34;,&#10;    &#34;chloe.carter@example.com&#34;,&#10;    &#34;ethan1990@mail.com&#34;,&#10;    &#34;amelia.hill@example.com&#34;,&#10;    &#34;alexander.baker@mail.com&#34;,&#10;    &#34;grace_55@example.com&#34;,&#10;    &#34;william.roberts@mail.com&#34;,&#10;    &#34;lily88@example.com&#34;,&#10;    &#34;jackson.brown@mail.com&#34;,&#10;    &#34;aubrey.smith@example.com&#34;,&#10;    &#34;noah_789@mail.com&#34;,&#10;    &#34;ella.collins@example.com&#34;,&#10;    &#34;logan.morris@mail.com&#34;,&#10;    &#34;ava_5678@example.com&#34;,&#10;    &#34;oliver.harris@mail.com&#34;,&#10;    &#34;avery.james@example.com&#34;,&#10;    &#34;lucas_2001@mail.com&#34;,&#10;    &#34;mia.edwards@example.com&#34;,&#10;    &#34;carter_morgan@mail.com&#34;,&#10;    &#34;amelia_444@example.com&#34;,&#10;    &#34;jayden.anderson@mail.com&#34;,&#10;    &#34;harper.wright@example.com&#34;,&#10;    &#34;owen_999@mail.com&#34;,&#10;    &#34;abigail.phillips@example.com&#34;,&#10;    &#34;wyatt.cooper@mail.com&#34;,&#10;    &#34;victoria_123@mail.com&#34;,&#10;    &#34;dylan.parker@example.com&#34;,&#10;    &#34;brooklyn.jenkins@mail.com&#34;,&#10;    &#34;luke_777@mail.com&#34;,&#10;    &#34;elizabeth.scott@mail.com&#34;,&#10;    &#34;levi_456@example.com&#34;,&#10;    &#34;aubrey.kelly@mail.com&#34;&#10;  ]&#10;}&#10;" />
+        </zeebe:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1367puc</bpmn:incoming>
+      <bpmn:outgoing>Flow_0hloyik</bpmn:outgoing>
+      <bpmn:property id="Property_0b8fly5" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_0d0r08g">
+        <bpmn:sourceRef>DataStoreReference_0wpd9e1</bpmn:sourceRef>
+        <bpmn:targetRef>Property_0b8fly5</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_1367puc" sourceRef="xor_check_email_validity" targetRef="Activity_0igullt" />
+    <bpmn:sequenceFlow id="Flow_0hloyik" sourceRef="Activity_0igullt" targetRef="xor_email_valid" />
+    <bpmn:serviceTask id="Activity_1rs8xiv" name="Verify Payment details">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="verify_payment" />
+        <zeebe:ioMapping>
+          <zeebe:input source="=payment_card" target="payment_card" />
+          <zeebe:output source="=payment_verified" target="payment_verified" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0wdtkj3</bpmn:incoming>
+      <bpmn:outgoing>Flow_1kty4pg</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0wdtkj3" sourceRef="Activity_0k0yopk" targetRef="Activity_1rs8xiv" />
+    <bpmn:sequenceFlow id="Flow_1kty4pg" sourceRef="Activity_1rs8xiv" targetRef="Gateway_1618xqj" />
+    <bpmn:userTask id="Activity_0k0yopk" name="Provide Payment details">
+      <bpmn:extensionElements>
+        <zeebe:formDefinition formKey="camunda-forms:bpmn:UserTaskForm_12q7hsd" />
+        <zeebe:ioMapping>
+          <zeebe:output source="=payment_card" target="payment_card" />
+        </zeebe:ioMapping>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1ihwbfr</bpmn:incoming>
+      <bpmn:outgoing>Flow_0wdtkj3</bpmn:outgoing>
+    </bpmn:userTask>
+  </bpmn:process>
+  <bpmn:message id="Message_322ofk8" name="msg_start_usr_signup" />
+  <bpmn:message id="Message_12dh7bo" name="msg_finish_payment">
+    <bpmn:extensionElements>
+      <zeebe:subscription correlationKey="=msg_finish_payment" />
+    </bpmn:extensionElements>
+  </bpmn:message>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0af2aso">
+      <bpmndi:BPMNShape id="Participant_0cmuujq_di" bpmnElement="Participant_0cmuujq" isHorizontal="true">
+        <dc:Bounds x="160" y="90" width="1540" height="390" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_09x7ypj_di" bpmnElement="event_start_signup">
+        <dc:Bounds x="222" y="302" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="199" y="345" width="83" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0cqhug0_di" bpmnElement="xor_check_email_validity" isMarkerVisible="true">
+        <dc:Bounds x="305" y="295" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_01r08pq_di" bpmnElement="Activity_0goc7gv">
+        <dc:Bounds x="380" y="340" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataStoreReference_0wpd9e1_di" bpmnElement="DataStoreReference_0wpd9e1">
+        <dc:Bounds x="405" y="75" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="408" y="51" width="43" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1jv0p7u_di" bpmnElement="xor_email_valid" isMarkerVisible="true">
+        <dc:Bounds x="495" y="295" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="535" y="253" width="70" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0k70eub_di" bpmnElement="Activity_1injomm">
+        <dc:Bounds x="610" y="280" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1b0t0j2_di" bpmnElement="Gateway_1b0t0j2">
+        <dc:Bounds x="735" y="295" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0595vnq_di" bpmnElement="Gateway_0595vnq" isMarkerVisible="true">
+        <dc:Bounds x="1065" y="295" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1xvseil_di" bpmnElement="Activity_1xvseil">
+        <dc:Bounds x="1480" y="280" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1618xqj_di" bpmnElement="Gateway_1618xqj" isMarkerVisible="true">
+        <dc:Bounds x="1395" y="295" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1295.5" y="313" width="89" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1vweog5_di" bpmnElement="event_end_signup">
+        <dc:Bounds x="1622" y="302" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1596" y="265" width="89" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0tgkhmb_di" bpmnElement="usr_task_select_payment_plan">
+        <dc:Bounds x="830" y="340" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1rapvkb_di" bpmnElement="usrtask_verify_email">
+        <dc:Bounds x="830" y="210" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_08v6b5o_di" bpmnElement="Gateway_08v6b5o">
+        <dc:Bounds x="965" y="295" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0ldc389_di" bpmnElement="Activity_0igullt">
+        <dc:Bounds x="380" y="200" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0k2w1r3_di" bpmnElement="Activity_1rs8xiv">
+        <dc:Bounds x="1280" y="200" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1jjcylk_di" bpmnElement="Activity_0k0yopk">
+        <dc:Bounds x="1140" y="200" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_13a2829_di" bpmnElement="Flow_13a2829">
+        <di:waypoint x="258" y="320" />
+        <di:waypoint x="305" y="320" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1vnwwm3_di" bpmnElement="Flow_1vnwwm3">
+        <di:waypoint x="380" y="380" />
+        <di:waypoint x="330" y="380" />
+        <di:waypoint x="330" y="345" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1eshjpt_di" bpmnElement="Flow_1eshjpt">
+        <di:waypoint x="545" y="320" />
+        <di:waypoint x="610" y="320" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="572" y="303" width="17" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0bn0p9y_di" bpmnElement="Flow_0bn0p9y">
+        <di:waypoint x="520" y="345" />
+        <di:waypoint x="520" y="380" />
+        <di:waypoint x="480" y="380" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="529" y="360" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_13s4htg_di" bpmnElement="Flow_13s4htg">
+        <di:waypoint x="710" y="320" />
+        <di:waypoint x="735" y="320" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1tz1g40_di" bpmnElement="Flow_1tz1g40">
+        <di:waypoint x="1580" y="320" />
+        <di:waypoint x="1622" y="320" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1u7miq1_di" bpmnElement="Flow_1u7miq1">
+        <di:waypoint x="1420" y="345" />
+        <di:waypoint x="1420" y="400" />
+        <di:waypoint x="1090" y="400" />
+        <di:waypoint x="1090" y="345" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1249" y="382" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ihwbfr_di" bpmnElement="Flow_1ihwbfr">
+        <di:waypoint x="1090" y="295" />
+        <di:waypoint x="1090" y="240" />
+        <di:waypoint x="1140" y="240" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1tf525v_di" bpmnElement="Flow_1tf525v">
+        <di:waypoint x="1445" y="320" />
+        <di:waypoint x="1480" y="320" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1454" y="302" width="18" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1mcl6q7_di" bpmnElement="Flow_1mcl6q7">
+        <di:waypoint x="760" y="345" />
+        <di:waypoint x="760" y="380" />
+        <di:waypoint x="830" y="380" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0x2msf9_di" bpmnElement="Flow_0x2msf9">
+        <di:waypoint x="930" y="380" />
+        <di:waypoint x="990" y="380" />
+        <di:waypoint x="990" y="345" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0pgme9z_di" bpmnElement="Flow_0pgme9z">
+        <di:waypoint x="1015" y="320" />
+        <di:waypoint x="1065" y="320" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_00fuych_di" bpmnElement="Flow_00fuych">
+        <di:waypoint x="760" y="295" />
+        <di:waypoint x="760" y="250" />
+        <di:waypoint x="830" y="250" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ox0yk2_di" bpmnElement="Flow_0ox0yk2">
+        <di:waypoint x="930" y="250" />
+        <di:waypoint x="990" y="250" />
+        <di:waypoint x="990" y="295" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1367puc_di" bpmnElement="Flow_1367puc">
+        <di:waypoint x="330" y="295" />
+        <di:waypoint x="330" y="240" />
+        <di:waypoint x="380" y="240" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0hloyik_di" bpmnElement="Flow_0hloyik">
+        <di:waypoint x="480" y="240" />
+        <di:waypoint x="520" y="240" />
+        <di:waypoint x="520" y="295" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0wdtkj3_di" bpmnElement="Flow_0wdtkj3">
+        <di:waypoint x="1240" y="240" />
+        <di:waypoint x="1280" y="240" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1kty4pg_di" bpmnElement="Flow_1kty4pg">
+        <di:waypoint x="1380" y="240" />
+        <di:waypoint x="1420" y="240" />
+        <di:waypoint x="1420" y="295" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_0d0r08g_di" bpmnElement="DataInputAssociation_0d0r08g">
+        <di:waypoint x="430" y="125" />
+        <di:waypoint x="430" y="200" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
